@@ -1,0 +1,64 @@
+@import '../styles/var';
+
+.header{
+    width: 1440px;
+    height: 65px;
+    background: $primary-color;
+    border-radius: 50px;
+    margin: 19px 240px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 11px;
+
+    &__title{
+        display: flex;
+        align-items: center;
+        gap: 7px;
+        color: #fff;
+    }
+
+    &__logo{
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    &__text{
+        width: 86px;
+        height: 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        line-height: 1;
+    }
+
+    &__title{
+        font-weight: 600;
+        font-size: 19px;
+    }
+
+    &__subtitle{
+        font-size: 19px;
+        font-weight: 300;
+    }
+
+    &__nav{
+        display: flex;
+        justify-content: space-between;
+        width: 701px;
+        font-size: 15px;
+
+        a{
+            color: #fff;
+            cursor: pointer;
+        }
+    }
+
+    &__lang{
+        padding-right: 14px;
+        display: flex;
+        gap: 10px;
+    }
+}
