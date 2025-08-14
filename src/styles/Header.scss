@@ -44,17 +44,32 @@
         font-weight: 300;
     }
 
-    &__nav{
-        display: flex;
-        justify-content: space-between;
-        width: 701px;
-        font-size: 15px;
+&__nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 701px;
+    font-size: 15px;
 
-        a{
-            color: #fff;
-            cursor: pointer;
+    ul {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+
+      li {
+        color: #fff;
+        cursor: pointer;
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: #ccc;
         }
+      }
     }
+  }
 
     &__lang{
         padding-right: 14px;
