@@ -24,12 +24,12 @@ const Header = () => {
       </div>
       <nav className="header__nav">
         <ul>
-            <li onClick={() => scrollDown('home')}>Գլխավոր</li>
-            <li onClick={() => scrollDown('about')}>Մեր մասին</li>
-            <li onClick={() => scrollDown('groups')}>Խմբեր</li>
-            <li onClick={() => scrollDown('parents')}>Ծնողները մեր մասին</li>
-            <li onClick={() => scrollDown('ourday')}>Մեր առօրյան</li>
-            <li onClick={() => scrollDown('contacts')}>Կոնտակտներ</li>
+          <li onClick={() => scrollDown("home")}>Գլխավոր</li>
+          <li onClick={() => scrollDown("about")}>Մեր մասին</li>
+          <li onClick={() => scrollDown("groups")}>Խմբեր</li>
+          <li onClick={() => scrollDown("parents")}>Ծնողները մեր մասին</li>
+          <li onClick={() => scrollDown("ourday")}>Մեր առօրյան</li>
+          <li onClick={() => scrollDown("contacts")}>Կոնտակտներ</li>
         </ul>
       </nav>
       <div className="header__lang">

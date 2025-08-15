@@ -1,11 +1,12 @@
 @import '../styles/var';
 
 .header{
-    width: 1440px;
+    width: $main-width;
     height: 65px;
     background: $primary-color;
     border-radius: 50px;
-    margin: 19px 240px;
+    margin-top: 19px ;
+    margin-left: $margin;
     display: flex;
     align-items: center;
     justify-content: space-between;

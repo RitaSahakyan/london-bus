@@ -1,0 +1,129 @@
+@import '../styles/var';
+
+.homepage{
+    width: 1920px;
+}
+
+.homepage__home::before{
+    content: "";
+    position: absolute;
+    width: 1920px;
+    height: 100%;
+    background-image: url('../assets/Home/sloud_xl.svg');background-repeat: no-repeat; background-position:0px 550px;
+    background-size: contain;
+    top: 100px;
+    z-index: -1;
+    
+}
+
+.homepage__home{
+    display: flex;
+    width: $main-width;
+    margin-left: $margin;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 59px;
+    height: 696px;
+    z-index: 1;
+
+    &-block{
+        display: flex;
+        justify-content: space-between;
+        background-image: url('../assets/Home/cloud_s.svg');
+        background-repeat: no-repeat; background-position: 390px 120px;
+        background-size: cover;
+        
+    }
+
+    &-title{
+        margin-top: 103px;
+        font-weight: 600;
+        font-size: 60px;
+        color: $primary-color;
+        width: 765px;
+        height: 154px;
+        line-height: 80px;
+    }
+
+    &-children img{
+        height: 595px;
+    }
+
+    &-btnbox{
+        display: flex;
+        flex-direction: column;
+        gap: 38.86px;
+        align-items: center;
+    }
+    &-btn{
+        width: 267px;
+        height: 55px;
+        border-radius: 50px;
+        background-color: $primary-color;
+        color: #fff;
+        align-items: center;
+        font-size: 19px;
+        border: none;
+        cursor: pointer;
+    }
+    &-btn:hover{
+        background-color: #fff;
+        color: $primary-color;
+        border: 1px solid $primary-color;
+        transition: 0.6s;
+    }
+    &-arrow {
+        height: 20.28px;
+        width: 7.44px;
+    }
+
+}
+
+.homepage__about{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &-title{
+        width: 1920px;
+        display: flex;
+        justify-content: space-around;
+        color: #FF4880;
+        font-size: 50px;
+        font-weight: 600;
+        line-height: 70px;
+        text-align: right;background-image: url('../assets/About/rainbow.svg');
+        background-repeat: no-repeat; background-position: 130px 2px;
+        background-size: 193px 128px;
+    }
+    &-content{
+        display: flex;
+        gap: 88px;
+        margin-top: 50px;
+    }
+    &-text{
+        width: 656px;
+        margin-top: 208px;
+        color: #828181;
+        font-size: 17px;
+        line-height: 26px;
+    }
+    &-girlimg{
+        background: url('../assets/About/girl.svg') no-repeat center;background-size: cover;
+        position: relative;   
+        width: 590px;   
+        height: 667px;
+    }
+
+
+}
+.homepage__about-girlimg::after{content: "";
+    position: absolute;
+    width: 243.34px;
+    height: 524px;
+    top: 150px;
+    left: 370px;
+    background: url('../assets/About/giraffe.svg');
+    background-size: contain;
+    z-index: 2;
+    }
