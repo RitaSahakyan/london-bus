@@ -4,17 +4,6 @@
     width: 1920px;
 }
 
-.homepage__home::before{
-    content: "";
-    position: absolute;
-    width: 1920px;
-    height: 100%;
-    background-image: url('../assets/Home/sloud_xl.svg');background-repeat: no-repeat; background-position:0px 550px;
-    background-size: contain;
-    top: 100px;
-    z-index: -1;
-    
-}
 
 .homepage__home{
     display: flex;
@@ -30,8 +19,9 @@
         display: flex;
         justify-content: space-between;
         background-image: url('../assets/Home/cloud_s.svg');
-        background-repeat: no-repeat; background-position: 390px 120px;
-        background-size: cover;
+        background-repeat: no-repeat; 
+        background-position: 380px 60px;
+        background-size: 162px 400px;
         
     }
 
@@ -93,7 +83,8 @@
         font-weight: 600;
         line-height: 70px;
         text-align: right;background-image: url('../assets/About/rainbow.svg');
-        background-repeat: no-repeat; background-position: 130px 2px;
+        background-repeat: no-repeat; 
+        background-position: 130px 2px;
         background-size: 193px 128px;
     }
     &-content{
@@ -109,14 +100,335 @@
         line-height: 26px;
     }
     &-girlimg{
-        background: url('../assets/About/girl.svg') no-repeat center;background-size: cover;
+        background: url('../assets/About/girl.svg') no-repeat center;
+        background-size: cover;
         position: relative;   
         width: 590px;   
         height: 667px;
     }
+    &-plane{
+        background: url('../assets/About/plane.svg') no-repeat center;
+        background-repeat: no-repeat; 
+        background-size: 241px 351px;
+        background-position: 0 210px;
+        width: 241px;
+    }
+    &-adv{
+        display: flex;
+        width: 1440px;
+        justify-content: space-between;
+        margin-top: 110px;
+                    gap: 40px;
+
+        &-item{
+            display: flex;
+            flex-direction: column;
+            width: 340px;
+        }
+
+        &-header{
+            color: #000;
+            font-size: 17px;
+            display: flex;
+            margin: 24px 20px 23px 17px;
+            h3{
+                margin-left: 21px;
+                max-width: 210px;
+            }
+        }
+
+        &-text{
+            color: #434343;
+            font-size: 15px;
+            line-height: 26px;
+        }
+    }
 
 
 }
+.down{
+    margin-top: 34px;
+}
+
+.homepage__groups{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    width: 1920px;
+
+    &-heading{
+        width: 1920px;
+        display: flex;
+        justify-content: center;
+        position: relative;
+        &-icon1{
+        background: url('../assets/Groups/icon1.svg')no-repeat center;
+        background-size: cover;
+        position: absolute;
+        width: 83.44px;
+        height: 85px;
+        z-index: 5;
+        top: 192px;
+        left: 1307px;
+    }
+
+        &-icon2{
+        background: url('../assets/Groups/icon2.svg')no-repeat center;
+        background-size: cover;
+        position: absolute;
+        width: 83.44px;
+        height: 85px;
+        z-index: 5;
+        top: 204px;
+        left: 1446px;
+    }
+
+        &-icon3{
+        background: url('../assets/Groups/icon3.svg')no-repeat center;
+        background-size: cover;
+        position: absolute;
+        width: 83.44px;
+        height: 85px;
+        z-index: 5;
+        top: 200px;
+        left: 1565px;
+    }
+
+        &-icon4{
+        background: url('../assets/Groups/icon4.svg')no-repeat center;
+        background-size: cover;
+        position: absolute;
+        width: 83.44px;
+        height: 85px;
+        z-index: 5;
+        top: 195px;
+        left: 1689px;
+    }
+    }
+
+    &-title{
+        margin-top: 194px;
+        line-height: 48px;
+        font-size: 35px;
+        color: $primary-color;
+        font-weight: 600;
+        margin-bottom: 65px;
+    }
+
+    &-lessons{
+        display: flex;
+        gap:15px;
+        width: 1440px;
+        justify-content: space-between;
+    }
+
+    &-lesson{
+        display: flex;
+        flex-direction: column;
+        width: 347.7px;
+        height: 406px;
+        border-radius: 10px;
+        align-items: center;
+
+        &-text{
+            max-width: 202px;
+            padding-left: 60px;
+            padding-right: 60px;
+            height: 92.76px;
+            border-radius: 0 0 20px 20px;
+            text-align: center;
+            padding-top: 22.76px;
+            color: $primary-color;
+            font-size: 18px;
+            font-weight: 400;
+            box-shadow:0 0 20px rgba(163, 163, 163, 0.41);
+        }
+    }
+
+    &-bg-pics{
+        height: 526px;
+        position: relative;
+    }
+
+    &-bigclouds{
+        top: -120px;
+        background: url('../assets/Groups/clouds.svg')no-repeat center;
+        background-size: cover;
+        position: relative;
+        width: 1920px;
+        height: 626px;
+        z-index: -1;
+    }
+    &-bus{
+        background: url('../assets/Groups/bus.svg')no-repeat center;
+        background-size: cover;
+        width: 972px;
+        height: 395px;
+        top: 140px;
+        left: 700px;
+        position: absolute;
+    }
+    &-polygon{
+        background: url('../assets/Groups/Polygon\ 1.svg')no-repeat center;
+        background-size: cover;
+        width: 300px;
+        height: 153px;
+        position: absolute;
+        top: 410px;
+        left: 450px;
+    }
+    &-reserve{
+        background-color: $secondary-color;
+        height: 624px;
+        width: 1920px;
+        position: relative;
+    }
+    &-content{
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        line-height: 0;
+        justify-content: space-between;
+        margin: 0;
+        margin-top: 102px;
+
+        h1{
+            color: $primary-color;
+            font-size: 75px;
+            font-weight: 700;
+        }
+        
+        h2{
+            color: #fff;
+            font-size: 50px;
+            font-weight: 400;
+        }
+
+        h3{
+            color: #fff;
+            font-weight: 400;
+            font-size: 35px;
+        }
+
+        button{
+            width: 217px;
+            height: 55px;
+            font-size: 19px;
+            color: #fff;
+            background-color: $primary-color;
+            border-radius: 50px;
+            border: none;
+            margin-top: 55px;
+        }
+    }
+    &-bgdots{
+        background: url('../assets/Groups/background.svg')no-repeat center;
+        background-size: cover;
+        position: relative;
+        width: 1920px;
+        height: 626px;
+        z-index: 0;
+        top: -490px;
+    }
+    &-smallclouds{
+        background: url('../assets/Groups/cloudssmall.svg')no-repeat center;
+        background-size: cover;
+        position: relative;
+        width: 1920px;
+        height: 110px;
+        z-index: 1;
+        top: -600px;
+    }
+    &-album{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+            &-title{
+                margin-top: 69px;
+                margin-bottom: 111px;
+                color: $primary-color;
+                font-weight: 500;
+                font-size: 35px;
+            }
+        }
+    &-gallery{
+         display: grid;
+        grid-template-columns: repeat(6, 228px);
+        grid-template-rows: repeat(3, 223px);
+        gap: 11px;
+        width: 1440px;
+        height: 757px;
+
+      img{
+        width: 228px;
+        height: 223px;
+        object-fit: cover;
+        border-radius: 10px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+        transition: transform 0.3s ease;
+      }
+    }
+    &-icon1{
+        background: url('../assets/Groups/icon-idea.svg')no-repeat center;
+        background-size: cover;
+        position: absolute;
+        width: 84px;
+        height: 101px;
+        z-index: 5;
+        top: 29px;
+        left: 387px;
+    }
+
+        &-icon2{
+        background: url('../assets/Groups/icon-balloon.svg')no-repeat center;
+        background-size: cover;
+        position: absolute;
+        width: 86px;
+        height: 190px;
+        z-index: 5;
+        top: 291px;
+        left: 358px;
+    }
+
+        &-icon3{
+        background: url('../assets/Groups/icon-ball.svg')no-repeat center;
+        background-size: cover;
+        position: absolute;
+        width: 89px;
+        height: 88px;
+        z-index: 5;
+        top: 80px;
+        left: 1491px;
+    }
+
+        &-icon4{
+        background: url('../assets/Groups/icon-balloon2.svg')no-repeat center;
+        background-size: cover;
+        position: absolute;
+        width: 53px;
+        height: 163px;
+        z-index: 5;
+        top: 301px;
+        left: 1431px;
+    }
+    
+}
+
+.homepage__home::before{
+    content: "";
+    position: absolute;
+    width: 1920px;
+    height: 100%;
+    background-image: url('../assets/Home/sloud_xl.svg');background-repeat: no-repeat; background-position:0px 550px;
+    background-size: contain;
+    top: 100px;
+    z-index: -1;
+}
+
 .homepage__about-girlimg::after{content: "";
     position: absolute;
     width: 243.34px;
@@ -127,3 +439,60 @@
     background-size: contain;
     z-index: 2;
     }
+.homepage__about-adv-item:hover{
+    margin-top: 20px;
+    box-shadow:0 0 30px rgba(111, 111, 111, 0.41);
+    border-radius: 20px;
+    transition: 0.5s;
+}
+
+.homepage__groups-gallery img:hover {
+      transform: scale(1.05);
+    }
+
+.homepage__groups-bigclods::after{
+        content: "";
+        position: absolute;
+        width: 972px;
+        height: 395px;
+        background: url('../assets/Groups/bus.svg');
+        background-size: contain;
+        z-index: 2;
+    }
+
+.homepage__groups-lesson:hover{
+    margin-top: 20px;
+    transition: 0.5s;
+}
+
+.homepage__groups-lesson-text:hover{
+            box-shadow:0 0 35px rgba(91, 91, 91, 0.41);
+            transition: 0.2s;
+
+}
+.homepage__groups::before{
+    content: "";
+    position: absolute;
+    top: -30px;
+    width: 1920px;
+    height: 229px;
+    background-image: url('../assets/Groups/paper-plane.svg');
+    background-repeat: no-repeat; 
+    background-position: 210px;
+    background-size: 1521px;
+    z-index: -1;
+}
+
+.homepage__groups-album::before{
+    content: "";
+    position: absolute;
+    width: 1920px;
+    height: 100%;
+    background-image: url('../assets/Album/upper-clouds.svg');
+    background-repeat: no-repeat; 
+    background-position:0px -100px;
+    background-size: contain;
+    top: 100px;
+    z-index: -1;
+}
+
