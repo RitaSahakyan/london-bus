@@ -1,4 +1,7 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
+import Request from "./Request";
+import Popup from "./Popup";
+import AlbumSlider from "./Album";
 import '../styles/HomePage.scss'
 import HomeImage from '../assets/Home/home-children.svg'
 import HomeArrow from '../assets/Home/arr.svg'
@@ -10,24 +13,6 @@ import Group1 from '../assets/Groups/Baby1.svg'
 import Group2 from '../assets/Groups/Baby2.svg'
 import Group3 from '../assets/Groups/Baby3.svg'
 import Group4 from '../assets/Groups/Baby.svg'
-import img1 from '../assets/Album/1.svg'
-import img2 from '../assets/Album/2.svg'
-import img3 from '../assets/Album/3.svg'
-import img4 from '../assets/Album/4.svg'
-import img5 from '../assets/Album/5.svg'
-import img6 from '../assets/Album/6.svg'
-import img7 from '../assets/Album/7.svg'
-import img8 from '../assets/Album/8.svg'
-import img9 from '../assets/Album/9.svg'
-import img10 from '../assets/Album/10.svg'
-import img11 from '../assets/Album/11.svg'
-import img12 from '../assets/Album/12.svg'
-import img13 from '../assets/Album/13.svg'
-import img14 from '../assets/Album/14.svg'
-import img15 from '../assets/Album/15.svg'
-import img16 from '../assets/Album/16.svg'
-import img17 from '../assets/Album/17.svg'
-import img18 from '../assets/Album/18.svg'
 import brackets from '../assets/Parents-about-us/brackets.svg'
 import Armine1 from '../assets/Parents-about-us/parent-1.svg'
 import Armine2 from '../assets/Parents-about-us/parent-2.svg'
@@ -41,10 +26,31 @@ import QuestionImg from '../assets/Our day/questions image.svg'
 import Accordion from "../components/Accordion";
 
 
+/* Խմբերի փոփափ */
 
+const popups = [
+    {id: 1, title: "Նախադպրոցական խումբ", image: Group1, text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. In magni velit minima! Quaerat eligendi, at neque consequuntur fugiat a quo et earum, similique delectus explicabo cupiditate aliquid voluptatum magnam, eos maxime reiciendis facere! Et eum dicta vitae cum repellat sit consequuntur. Itaque, autem maiores? Aut impedit, aperiam magni corporis magnam neque laborum recusandae maiores quae, libero provident dignissimos aspernatur! Saepe?"},
+    {id: 2, title: "2-4Տ․ Զարգացման խումբ", image: Group2, text: "Սկսած 1500-ականներից` Lorem Ipsum-ը հանդիսացել է տպագրական արդյունաբերության ստանդարտ մոդելային տեքստ, ինչը մի անհայտ տպագրիչի կողմից տարբեր տառատեսակների օրինակների գիրք ստեղծելու ջանքերի արդյունք է: Այս տեքստը ոչ միայն կարողացել է գոյատևել հինգ դարաշրջան:"},
+    {id: 3, title: "Անգլերենի դասընթացներ", image: Group3, text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. In magni velit minima! Quaerat eligendi, at neque consequuntur fugiat a quo et earum, similique delectus explicabo cupiditate aliquid voluptatum magnam, eos maxime reiciendis facere! Et eum dicta vitae cum repellat sit consequuntur. Itaque, autem maiores? Aut impedit, aperiam magni corporis magnam neque laborum recusandae maiores quae, libero provident dignissimos aspernatur! Saepe?"},
+    {id: 4, title: "Ռուսերենի  դասընթացներ", image: Group4, text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. In magni velit minima! Quaerat eligendi, at neque consequuntur fugiat a quo et earum, similique delectus explicabo cupiditate aliquid voluptatum magnam, eos maxime reiciendis facere! Et eum dicta vitae cum repellat sit consequuntur. Itaque, autem maiores? Aut impedit, aperiam magni corporis magnam neque laborum recusandae maiores quae, libero provident dignissimos aspernatur! Saepe?"},
 
+];
 
 const HomePage = () => {
+/* Խմբերի փոփափ */
+const [selectedItem, setSelectedItem] = useState(null);
+
+  const handleClick = (item) => {
+    setSelectedItem(item);
+    setIsOpen(true);
+  };
+
+  const handleClose = () => {
+    setIsOpen(false);
+    setSelectedItem(null);
+  };
+
+/*Հաճախ տրվող հարցերի դատա*/ 
     const items = [
     {title: "Ինչու՞ մեր ծրագիրը ?", content: "London Bus մանկական զարգացման կենտրոնում յուրաքանչյուր երեխայի՝ խաղալու, սովորելու և զարգանալու ընթացքը կազմակերպված է սիրով, հոգատարությամբ և փորձագիտական մոտեցմամբ։Մեր աշխատանքային մոտեցումը հիմնված է հետևյալ սկզբունքների վրա՝ Մենք սկսում ենք երեխայի կարիքների գնահատումից։ Յուրաքանչյուր նոր գրանցման դեպքում մեր մասնագետները դիտարկում են երեխայի տարիքը, զարգացման փուլը և լեզվական կարողությունները՝ ձևավորելով նրան համապատասխան խումբ։"},
     {title: "Ինչ ծրագրեր են գործում Լոնդոն բասում ?", content: "Լոնդոն բասում գործում է «Նախապատրաստում մանկապարտեզին» ծրագիրը՝ նախատեսված 2-4 տարեկան երեխաների համար։Մեր նպատակն է օգնել փոքրիկներին՝ Հարմարվել նոր միջավայրին, Զարգացնել ինքնուրույնության հմտությունները,  Խթանել հաղորդակցությունն ու սոցիալականացումը, Սովորել մանկապարտեզին անհրաժեշտ հմտություններ խաղերի միջոցով"},
@@ -52,6 +58,10 @@ const HomePage = () => {
     {title: "Քանի՞ տարեկանից է ընդունելությունը ? ", content: "Լոնդոն Բասում գործում է «Նախապատրաստում մանկապարտեզին» ծրագիրը՝ նախատեսված 2-4 տարեկան երեխաների համար։Մեր նպատակն է օգնել փոքրիկներին՝ Հարմարվել նոր միջավայրին, զարգացնել ինքնուրույնության հմտությունները,  խթանել հաղորդակցությունն ու սոցիալականացումը, սովորել մանկապարտեզին անհրաժեշտ հմտություններ խաղերի միջոցով։Երեխան ավելի վստահ է զգում, երբ մոր ներկայությամբ բացահայտում է նոր միջավայր և ստեղծվում է ուժեղ էմոցիոնալ կապ մայրիկի և փոքրիկի միջև։"},
     {title: "երբ կմեկնարկի է «English for kids» ծրագիրը ?", content: ""}
 ];
+
+const [isOpen, setIsOpen] = useState(false);
+
+/*Շարժվող իկոնկաներ*/ 
 
  const containerRef = useRef(null); 
 
@@ -153,22 +163,17 @@ const HomePage = () => {
                     <div className="homepage__groups-heading-icon4 "></div>
                 </div>
                 <div className="homepage__groups-lessons">
-                    <div className="homepage__groups-lesson">
-                        <img src={Group1} alt="lesson" />
-                        <div className="homepage__groups-lesson-text">Նախադպրոցական խումբ</div>
+                    {popups.map((item) => ( 
+                    <div
+                        key={item.id}
+                        className="homepage__groups-lesson"
+                        onClick={() => handleClick(item)}
+                    >
+                        <img src={item.image} alt={item.title} />
+                        <h3 className="homepage__groups-lesson-text">{item.title}</h3>
                     </div>
-                    <div className="homepage__groups-lesson">
-                        <img src={Group2} alt="lesson" />
-                        <div className="homepage__groups-lesson-text">2-4Տ․ Զարգացման խումբ</div>
-                    </div>
-                    <div className="homepage__groups-lesson">
-                        <img src={Group3} alt="lesson" />
-                        <div className="homepage__groups-lesson-text">Անգլերենի դասընթացներ</div>
-                    </div>
-                    <div className="homepage__groups-lesson">
-                        <img src={Group4} alt="lesson" />
-                        <div className="homepage__groups-lesson-text">Ռուսերենի  դասընթացներ</div>
-                    </div>
+                    ))}
+                    <Popup isOpen={isOpen} onClose={handleClose} item={selectedItem}/>
                 </div>
                 <div className="homepage__groups-bg-pics">
                     <div className="homepage__groups-bigclouds">
@@ -182,7 +187,7 @@ const HomePage = () => {
                         <h3>Ամրագրեք ձեր երեխայի տեղը հիմա</h3>
                         <h1>LONDON BUS</h1>
                         <h2>+374 (010) 60 - 88 - 89</h2>
-                        <button>ՈՒղարկել հայտ</button>
+                        <button onClick={() => setIsOpen(true)}>ՈՒղարկել հայտ</button>
                     </div>
                     <div className="homepage__groups-bgdots"></div>
                     <div className="homepage__groups-smallclouds"></div>
@@ -192,27 +197,7 @@ const HomePage = () => {
                     <div className="homepage__groups-icon4 parallax"></div>
                 </div>
                 <div className="homepage__groups-album">
-                    <h1 className="homepage__groups-album-title">Պատկերասրահ</h1>
-                    <div className="homepage__groups-gallery">
-                        <img src={img1} alt="Gallery photo" />
-                        <img src={img2} alt="Gallery photo" className="down"/>
-                        <img src={img3} alt="Gallery photo" />
-                        <img src={img4} alt="Gallery photo" className="down"/>
-                        <img src={img5} alt="Gallery photo" />
-                        <img src={img6} alt="Gallery photo" className="down"/>
-                        <img src={img7} alt="Gallery photo" />
-                        <img src={img8} alt="Gallery photo" className="down"/>
-                        <img src={img9} alt="Gallery photo" />
-                        <img src={img10} alt="Gallery photo" className="down"/>
-                        <img src={img11} alt="Gallery photo" />
-                        <img src={img12} alt="Gallery photo" className="down"/>
-                        <img src={img13} alt="Gallery photo" />
-                        <img src={img14} alt="Gallery photo" className="down"/>
-                        <img src={img15} alt="Gallery photo" />
-                        <img src={img16} alt="Gallery photo" className="down"/>
-                        <img src={img17} alt="Gallery photo" />
-                        <img src={img18} alt="Gallery photo" className="down"/>
-                    </div>
+                    <AlbumSlider />
                 </div>
             </section>
             <section id="parents" className="homepage__section homepage__review container" /*ref={containerRef}*/>
@@ -296,14 +281,15 @@ const HomePage = () => {
                     <h3>Պատվիրել զանգ</h3>
                     <h1>LONDON BUS</h1>
                     <h2>+374 (010) 60 - 88 - 89</h2>
-                    <button>ՈՒղարկել հայտ</button>
+                    <button onClick={() => setIsOpen(true)} >ՈՒղարկել հայտ</button>
+
                 </div>
                 <div >
                     <iframe className="homepage__contacts-map"
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3030.310406826141!2d44.5182504!3d40.1801797!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x406abce53353cbf1%3A0x9f64874cd8d5f7e7!2s50%20Nalbandyan%20poxoc%2C%20Yerevan!5e0!3m2!1sen!2s!4v1692336800000!5m2!1sen!2s"
-                        allowfullscreen=""
+                        allowFullScreen=""
                         loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade">
+                        referrerPolicy="no-referrer-when-downgrade">
                     </iframe>
                 </div>
             </div>
@@ -313,6 +299,8 @@ const HomePage = () => {
             <div className="homepage__contacts-icon3 parallax"></div>
             <div className="homepage__contacts-icon4 parallax"></div>
             </section>
+            <Request isOpen={isOpen} onClose={() => setIsOpen(false)}/>
+
         </main>
     );
 };

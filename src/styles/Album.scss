@@ -1,0 +1,64 @@
+.homepage__groups-gallery {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+
+  img {
+    width: 100%;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: transform 0.3s;
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  .down {
+    margin-top: 30px;
+  }
+}
+
+.slider-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(20, 20, 20, 0.7);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+
+  .slider-image {
+    width: 622px;
+    height: 633px;
+    border-radius: 10px;
+  }
+
+  .close-btn,
+  .prev-btn,
+  .next-btn {
+    position: absolute;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+  }
+
+  .close-btn {
+    top: 20px;
+    right: 30px;
+    font-size: 3rem;
+  }
+
+  .prev-btn {
+    left: 50px;
+  }
+
+  .next-btn {
+    right: 50px;
+  }
+}

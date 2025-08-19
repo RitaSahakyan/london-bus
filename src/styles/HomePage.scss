@@ -1,11 +1,15 @@
 @import '../styles/var';
 
+
 .homepage{
     width: 1920px;
 }
 
 .parallax {
   transition: transform 0.2s ease; 
+}
+.down{
+    margin-top: 34px;
 }
 
 
@@ -115,7 +119,6 @@
         background-repeat: no-repeat; 
         background-size: 241px 351px;
         background-position: 0 210px;
-        width: 241px;
     }
     &-adv{
         display: flex;
@@ -149,9 +152,6 @@
     }
 
 
-}
-.down{
-    margin-top: 34px;
 }
 
 .homepage__groups{
@@ -236,6 +236,7 @@
         height: 406px;
         border-radius: 10px;
         align-items: center;
+        cursor: pointer;
 
         &-text{
             max-width: 202px;
@@ -245,10 +246,11 @@
             border-radius: 0 0 20px 20px;
             text-align: center;
             padding-top: 22.76px;
-            color: $primary-color;
+            color: #393D72;
             font-size: 18px;
             font-weight: 400;
             box-shadow:0 0 20px rgba(163, 163, 163, 0.41);
+            margin: 0;
         }
     }
 
@@ -327,6 +329,8 @@
             border-radius: 50px;
             border: none;
             margin-top: 55px;
+            cursor: pointer;
+            z-index: 1000;
         }
     }
     &-bgdots{
@@ -613,6 +617,8 @@
                 font-size: 19px;
                 border: none;
                 border-radius: 30px;
+                z-index: 999;
+                cursor: pointer;
             }
         }
 
@@ -676,18 +682,9 @@
         top: 451px;
         left: 1657px;
     }
-    }
-
-.homepage__home::before{
-    content: "";
-    position: absolute;
-    width: 1920px;
-    height: 100%;
-    background-image: url('../assets/Home/sloud_xl.svg');background-repeat: no-repeat; background-position:0px 550px;
-    background-size: contain;
-    top: 100px;
-    z-index: -1;
 }
+
+
 
 .homepage__review-box:nth-child(4n+2) .homepage__review-content{
     background-color: #FEB857;
@@ -697,6 +694,20 @@
 }
 .homepage__review-box:nth-child(4n+4) .homepage__review-content{
     background-color: #00C70D;
+}
+
+
+
+/*Hover, after, before*/
+.homepage__home::before{
+    content: "";
+    position: absolute;
+    width: 1920px;
+    height: 100%;
+    background-image: url('../assets/Home/sloud_xl.svg');background-repeat: no-repeat; background-position:0px 550px;
+    background-size: contain;
+    top: 100px;
+    z-index: -1;
 }
 
 .homepage__review-content::after {
@@ -788,3 +799,458 @@
     z-index: -1;
 }
 
+
+.homepage__contacts-num button:hover{
+    color: #FFAD00;
+    width: 217px;
+    height: 55px;
+    background-color: #fff;
+    font-size: 19px;
+    border: 1px solid #FFAD00;
+    border-radius: 30px;
+    z-index: 999;
+    cursor: pointer;
+}
+
+
+.homepage__groups-content button:hover {
+    cursor: pointer;
+    border: 1px solid #393D72;
+    background-color: #fff;
+    color: #393D72;
+    font-weight: 500;
+    transition: 0.5s;
+    z-index: 1000;
+}
+
+
+/*Адаптация под iPhone*/
+
+@media (max-width: 428px) {
+    .homepage{
+        width: 428px;
+    }
+  .homepage__home {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 30px;
+    height: auto;
+
+    &-block {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &-title {
+      margin-top: 40px;
+      font-size: 28px;
+      width: 100%;
+      height: auto;
+      line-height: 36px;
+      text-align: left;
+    }
+    
+    &-children  {
+      height: 207px;
+      width: 218px;
+
+        &-children img {
+        height: 207px;
+        width: 218px;
+        }
+    }
+
+    &-btnbox {
+      gap: 20px;
+      width: 100%;
+    }
+
+    &-btn {
+      width: 100%;
+      max-width: 300px;
+      height: 50px;
+      font-size: 16px;
+    }
+  }
+  
+  .homepage__about {
+    &-title {
+      width: 100%;
+      font-size: 28px;
+      line-height: 36px;
+      text-align: center;
+      background-size: 123px 82px;
+      justify-content: center;
+      padding: 0 10px;
+      background-position: 23px 2px;
+      position: relative;
+    }
+
+    &-content {
+      display: block;
+      margin-top: 30px;
+    }
+
+    &-text {
+      width: 100%;
+      max-width: 380px;
+      margin-top: 0;
+      font-size: 15px;
+      line-height: 22px;
+      text-align: center;
+      padding: 0 15px;
+      flex: 1;
+    }
+
+    &-girlimg{
+        float: left;
+        width: 191px;   
+        height: 216px;
+    }
+
+    &-plane {
+      display: none;
+    }
+
+    &-adv {
+      flex-direction: column;
+      width: 100%;
+      align-items: center;
+      margin-top: 50px;
+      gap: 20px;
+
+      &-item {
+        width: 90%;
+        max-width: 360px;
+        text-align: center;
+      }
+
+      &-header {
+        font-size: 15px;
+        margin: 15px 10px;
+        justify-content: center;
+
+        h3 {
+          margin-left: 10px;
+          font-size: 16px;
+        }
+      }
+
+      &-text {
+        font-size: 14px;
+        line-height: 22px;
+      }
+    }
+  }
+  .homepage__groups {
+    width: 100%;
+    overflow: hidden;
+
+    &-heading {
+      width: 100%;
+      justify-content: center;
+
+      &-icon1, &-icon2, &-icon3, &-icon4 {
+        display: none;
+      }
+    }
+
+    &-title {
+      margin-top: 108px;
+      margin-bottom: 66px;
+      font-size: 24px;
+      line-height: 32px;
+      text-align: center;
+      padding: 0 10px;
+    }
+
+    &-lessons {
+      flex-direction: column;
+      align-items: center;
+      gap: 40px;
+      width: 100%;
+      height: 1600px;
+      margin-bottom: 100px;
+    }
+
+    &-lesson {
+        width: 347px;
+        height: 313px;
+
+      &-text {
+        font-size: 16px;
+
+        height: auto;
+        padding: 12px 60px;
+      }
+    }
+
+    &-bg-pics{
+        height: 250px;
+    }
+
+    &-bus{
+        width: 421px;
+        height: 171px;
+        left: -215px;
+        top: 50px;
+    }
+
+    &-bigclouds,
+    &-polygon{
+      display: none;
+    }
+
+        &-smallclouds {
+            width: 428px;
+            height: 120px;
+            top: -380px;
+        }
+
+        &-bgdots{
+            width: 428px;
+            height: 534px;
+            top: -270px;
+        }
+
+    &-reserve {
+      width: 100%;
+      height: 534px;
+    }
+
+    &-content {
+      margin-top: 40px;
+      text-align: center;
+
+      h1 {
+        font-size: 32px;
+        line-height: 40px;
+      }
+
+      h2 {
+        font-size: 22px;
+        margin-top: 10px;
+      }
+
+      h3 {
+        font-size: 18px;
+        margin-top: 10px;
+      }
+
+      button {
+        width: 180px;
+        height: 48px;
+        font-size: 16px;
+        margin-top: 30px;
+      }
+    }
+
+    &-album {
+      &-title {
+        margin-top: 40px;
+        margin-bottom: 30px;
+        font-size: 35px;
+        text-align: center;
+      }
+    }
+
+    &-gallery {
+      width: 100%;
+      height: auto;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: auto;
+      gap: 8px;
+      padding: 0 10px;
+
+      img {
+        width: 100%;
+        height: 160px;
+        border-radius: 8px;
+      }
+    }
+
+    &-icon1{
+        left: 44px;
+        top: 0;
+    } 
+    &-icon2{
+        top: 255px;
+        left: 15px;
+    }
+    &-icon3{
+        top: 75px;
+        left: 333px;
+    }
+    &-icon4 {
+        top: 296px;
+        left: 273px;
+    }
+  }
+  .homepage__review {
+    width: 400px; 
+
+    h1 {
+        font-size: 22px;
+        margin-top: 60px;
+        margin-bottom: 40px;
+        text-align: center;
+    }
+    &-box{
+        width: 400px;
+    }
+
+    &-container {
+        flex-direction: column;
+        justify-content: center;
+        width: 400px;
+        gap: 15px;
+        align-items: center;
+
+    }
+
+    &-clouds {
+        display: none; 
+    }
+
+    &-plane {
+        display: none;
+    }
+
+    &-parent {
+        margin: 15px 0 0 0;
+        flex-direction: column;
+
+        img {
+            width: 60px;
+            height: 60px;
+        }
+        span {
+            font-size: 16px;
+            margin: 10px 0 0 0;
+        }
+    }
+
+    &-content {
+        width: 100%;
+        height: auto;
+        padding-bottom: 15px;
+
+        img {
+            height: 50px;
+            width: 50px;
+            margin: 15px;
+        }
+    }
+
+    &-text {
+        margin: 10px 15px;
+        font-size: 16px;
+        line-height: 22px;
+    }
+}
+.homepage__ourday {
+    margin-top: 100px;
+    padding: 0 15px;
+
+    h1 {
+        font-size: 24px;
+        margin-bottom: 40px;
+        text-align: center;
+    }
+
+    &-container {
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 80px;
+        gap: 20px;
+    }
+
+    &-box {
+        width: 100%;
+        height: auto;
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+        p {
+            font-size: 18px;
+            text-align: center;
+            margin-top: 10px;
+        }
+    }
+
+    &-questionbox {
+        flex-direction: column;
+        gap: 25px;
+        align-items: center;
+
+        img {
+            width: 100%;
+            height: auto;
+            max-width: 350px; 
+        }
+    }
+}
+.homepage__contacts {
+    width: 428px;
+    margin-top: 50px; 
+    flex-direction: column;
+    align-items: center;
+
+    &-info {
+      flex-direction: column;
+      gap: 30px;
+      margin-top: 50px;
+    }
+
+    &-num {
+      height: auto;
+      h1 {
+        font-size: 40px; 
+        margin-bottom: 20px;
+      }
+      h2 {
+        font-size: 28px;
+        margin-bottom: 15px;
+      }
+      h3 {
+        font-size: 20px;
+        margin-bottom: 20px;
+      }
+      button {
+        display: none;
+      }
+    }
+
+    &-map {
+      width: 90%; 
+      height: auto;
+      aspect-ratio: 4/3;        
+    }
+
+    &-bgdots {
+      width: 428px;
+      height: 466px;
+    }
+
+    &-icon1,
+    &-icon2,
+    &-icon3,
+    &-icon4 {
+      display: none;
+    }
+  }
+  .homepage__about-girlimg::after{content: "";
+    position: absolute;
+    width: 79px;
+    height:169px;
+    top: 40px;
+    left: 120px;
+    background: url('../assets/About/giraffe.svg');
+    background-size: contain;
+    z-index: 2;
+    }
+
+}

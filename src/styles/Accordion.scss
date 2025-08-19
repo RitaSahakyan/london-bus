@@ -62,3 +62,31 @@
     transform: translateY(0);
   }
 }
+
+
+@media (max-width: 428px) {
+  .accordion {
+    width: 428px; 
+    padding: 0 10px; 
+
+    &__item {
+      margin-bottom: 10px;
+    }
+
+    &__title {
+      padding: 12px 15px 12px 40px;
+      font-size: 16px;
+
+      img {
+        width: 12px;
+        height: auto;
+      }
+    }
+
+    &__content {
+      padding: 15px 20px;
+      font-size: 14px;
+      line-height: 22px;
+    }
+  }
+}

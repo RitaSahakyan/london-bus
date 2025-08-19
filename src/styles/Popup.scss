@@ -1,0 +1,142 @@
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3000;
+
+  &__background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../assets/background.svg') no-repeat center center/cover;filter: blur(8px);
+    z-index: 1000;
+  }
+
+  &__container {
+    position: relative;
+    background: #fff;
+    border-radius: 12px;
+    width: 717px;
+    height: auto;
+    padding: 20px 30px;
+    z-index: 2000;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    &-box{
+        display: flex;
+        align-items: flex-start;
+        gap:15px;
+    }
+
+    h2 {
+      font-size: 25px;
+      font-weight: 700;
+      color: #393D72;
+    }
+
+      img {
+        width: 200px;
+        height: auto;
+        border-radius: 8px;
+        flex-shrink: 0;
+      }
+
+      p {
+        font-size: 16px;
+        line-height: 1.5;
+        color: #333;
+        overflow-y: auto;
+      }
+    }
+  }
+
+    .popup__button {
+      align-self: flex-start;
+      margin-top: 20px;
+      padding: 10px 20px;
+      border-radius: 30px;
+      border: none;
+      background-color: #393D72;
+      color: #fff;
+      font-size: 16px;
+      cursor: pointer;
+      z-index: 90000;
+    }
+
+    .popup__button:hover {
+      background-color: #fff;
+      color: #393D72;
+      border: 1px solid #393D72;
+      transition: 0.2s;
+    }
+
+
+@media (max-width: 428px) {
+    .popup{
+        width: 428px;
+        height: 100%;
+        z-index: 12000;
+        justify-content: center;
+    }
+  .popup__container {
+    width: 376px;
+    height: 632px;
+    padding: 14px 16px;
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background: #fff;
+    border-radius: 12px;
+    position: relative;
+    margin: 30px 26px;
+
+    &-box {
+      flex-direction: column;
+      gap: 10px;
+      align-items: left;
+      width: 100%;
+    }
+
+    h2 {
+      font-size: 20px;
+      text-align: left;
+    }
+
+    img {
+      width: 339px;
+      height: 306px;
+      border-radius: 8px;
+    }
+
+    p {
+      font-size: 14px;
+      line-height: 1.4;
+      text-align: left;
+      overflow-y: auto;
+    }
+  }
+
+  .popup__button {
+    display: none;
+  }
+
+  .popup__background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    filter: blur(8px);
+    z-index: 1000;
+  }
+}

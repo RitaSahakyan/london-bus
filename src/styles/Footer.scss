@@ -140,3 +140,52 @@
         left: 1657px;
     }
 }
+
+@media (max-width: 428px) {
+  .footer {
+    width: 428px;
+    height: auto;  
+    flex-direction: column;
+    margin-top: -2px;
+
+    &__contacts {
+      align-items: center;
+      gap: 10px;
+
+      &-bold {
+        font-size: 16px;
+        line-height: 24px;
+      }
+      &-light,
+      &-regular {
+        font-size: 14px;
+        line-height: 20px;
+      }
+
+      &-icons {
+        width: 180px;
+        height: auto;
+        gap: 6px;
+      }
+
+      &-f, &-x, &-i, &-y {
+        width: 40px;
+        height: 40px;
+
+        img {
+          width: auto;
+          height: 60%; 
+        }
+      }
+    }
+
+    &-bgdots {
+      width: 428px;
+      height: 295px;
+    }
+
+        &-icon1, &-icon2, &-icon3{
+        display: none;
+    }
+  }
+}
