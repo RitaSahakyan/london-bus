@@ -84,6 +84,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-image: url('../assets/About/rainbow.svg');
+        background-repeat: no-repeat; 
+        background-position: 130px 2px;
+        background-size: 193px 128px;
     &-title{
         width: 1920px;
         display: flex;
@@ -92,10 +96,7 @@
         font-size: 50px;
         font-weight: 600;
         line-height: 70px;
-        text-align: right;background-image: url('../assets/About/rainbow.svg');
-        background-repeat: no-repeat; 
-        background-position: 130px 2px;
-        background-size: 193px 128px;
+        text-align: right;
     }
     &-content{
         display: flex;
@@ -115,12 +116,6 @@
         position: relative;   
         width: 590px;   
         height: 667px;
-    }
-    &-plane{
-        background: url('../assets/About/plane.svg') no-repeat center;
-        background-repeat: no-repeat; 
-        background-size: 241px 351px;
-        background-position: 0 210px;
     }
     &-adv{
         display: flex;
@@ -457,7 +452,7 @@
         content: '';
         background-repeat: no-repeat;
         background: url(../assets/Parents-about-us/clouds.svg);
-    overflow: hidden;
+        overflow: hidden;
 
     }
     &-plane{
@@ -713,7 +708,6 @@
     background-size: contain;
     top: 100px;
     z-index: -1;
-    overflow: hidden;
 }
 
 .homepage__review-content::after {
@@ -829,6 +823,19 @@
     z-index: 1000;
 }
 
+.homepage__about-content::after{
+    content: "";
+    position: absolute;
+    width: 241px;
+    height: 351px;
+    background: url('../assets/About/plane.svg') no-repeat center;
+    background-repeat: no-repeat; 
+    background-size: contain;
+    top: 1300px;
+    left: 1600px;
+    z-index: -1;
+}
+
 
 /*Адаптация под iPhone*/
 
@@ -836,11 +843,15 @@
     .homepage{
         width: 428px;
     }
+
   .homepage__home {
     width: 100%;
     margin-left: 0;
     margin-top: 30px;
     height: auto;
+    &-arrow{
+        display: none;
+    }
 
     &-block {
       flex-direction: column;
@@ -880,16 +891,15 @@
   }
   
   .homepage__about {
+    background-position: 10px 20px;
+    background-size: 123px 82px;
     &-title {
-      width: 100%;
-      font-size: 28px;
-      line-height: 36px;
+      margin-top: 117px;
+      width: 361px;
+      font-size: 27px;
+      line-height: 44px;
+      height: 88px;
       text-align: center;
-      background-size: 123px 82px;
-      justify-content: center;
-      padding: 0 10px;
-      background-position: 23px 2px;
-      position: relative;
     }
 
     &-content {
@@ -1097,9 +1107,9 @@
     width: 400px; 
 
     h1 {
-        font-size: 22px;
-        margin-top: 60px;
-        margin-bottom: 40px;
+        font-size: 35px;
+        margin-top: 79px;
+        margin-bottom: 15px;
         text-align: center;
     }
     &-box{
@@ -1116,25 +1126,46 @@
     }
 
     &-clouds {
-        display: none; 
+        position: absolute;
+        top: 280px;
+        left: 0;
+        height: 201px;
+        width: 1920px;
+        background-position: center top;
+        content: '';
+        background-repeat: no-repeat;
+        background: url(../assets/Parents-about-us/clouds.svg);
+    overflow: hidden;
+    z-index: -1;
     }
 
     &-plane {
-        display: none;
+        position: absolute;
+        top: -190px;
+        left: -90px;
+        height: 351px;
+       width: 241px;
+        background-position: center top;
+        content: '';
+        background-repeat: no-repeat;
+        background: url(../assets/Parents-about-us/icon-plane.svg);
+        z-index: -200;
     }
 
     &-parent {
-        margin: 15px 0 0 0;
-        flex-direction: column;
+        margin: 15px 0 0 56px;
 
         img {
-            width: 60px;
-            height: 60px;
+            width: 84px;
+            height: 84px;
         }
         span {
-            font-size: 16px;
+            font-size: 18px;
             margin: 10px 0 0 0;
         }
+    }
+    &-box:nth-child(n+2) {
+      display: none !important;
     }
 
     &-content {
@@ -1157,18 +1188,19 @@
 }
 .homepage__ourday {
     margin-top: 100px;
+    z-index: 2000;
     padding: 0 15px;
 
     h1 {
-        font-size: 24px;
-        margin-bottom: 40px;
+        font-size: 35px;
+        margin-bottom: 32px;
         text-align: center;
     }
 
     &-container {
         flex-direction: column;
         align-items: center;
-        margin-bottom: 80px;
+        margin-bottom: 37px;
         gap: 20px;
     }
 
@@ -1186,11 +1218,17 @@
             margin-top: 10px;
         }
     }
+    &-box:nth-child(n+2) {
+      display: none !important;
+    }
 
     &-questionbox {
         flex-direction: column;
         gap: 25px;
         align-items: center;
+        h1{
+            font-size: 24px;
+        }
 
         img {
             width: 100%;
@@ -1258,5 +1296,20 @@
     background-size: contain;
     z-index: 2;
     }
+.homepage__home::before{
+    height: 100%;
+    background-image: url('../assets/Home/sloud_xl.svg');background-repeat: no-repeat; background-position:0px 550px;
+    background-size: contain;
+    top: -150px;
+    z-index: -1;
+    object-fit: cover;
+}
 
+.homepage__about-content::after{
+    width: 129px;
+    height: 187px;
+    top: 1210px;
+    left: 297px;
+    z-index: 1000;
+}
 }
