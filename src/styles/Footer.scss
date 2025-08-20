@@ -1,6 +1,8 @@
+@import '../styles/mixins';
+
 .footer{
     height: 546px;
-    width: 1920px;
+    @include container;
     background-color: #3A3D72;
     display: flex;
     flex-direction: column;

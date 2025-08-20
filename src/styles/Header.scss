@@ -1,6 +1,8 @@
 @import '../styles/var';
+@import '../styles/mixins';
 
 .header {
+  @include container;
   width: $main-width;
   height: 65px;
   background: $primary-color;

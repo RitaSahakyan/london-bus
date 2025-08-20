@@ -1,8 +1,9 @@
 @import '../styles/var';
+@import '../styles/mixins';
 
 
 .homepage{
-    width: 1920px;
+    @include container;
 }
 
 .parallax {
@@ -14,6 +15,7 @@
 
 
 .homepage__home{
+    @include container;
     display: flex;
     width: $main-width;
     margin-left: $margin;
@@ -78,7 +80,7 @@
 }
 
 .homepage__about{
-
+    @include container;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -160,7 +162,7 @@
     justify-content: center;
     flex-direction: column;
     position: relative;
-    width: 1920px;
+    @include container;
 
     &-heading{
         width: 1920px;
@@ -431,7 +433,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 1920px;
+    @include container;
     
     h1{
         font-size: 35px;
@@ -455,6 +457,8 @@
         content: '';
         background-repeat: no-repeat;
         background: url(../assets/Parents-about-us/clouds.svg);
+    overflow: hidden;
+
     }
     &-plane{
         position: absolute;
@@ -513,6 +517,7 @@
 }
 
 .homepage__ourday{
+    @include container;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -559,7 +564,7 @@
 }
 
 .homepage__contacts{
-    width: 1920px;
+    @include container;
     background-color: #3A3D72;
     display: flex;
     margin-top: 169px;
@@ -708,6 +713,7 @@
     background-size: contain;
     top: 100px;
     z-index: -1;
+    overflow: hidden;
 }
 
 .homepage__review-content::after {
