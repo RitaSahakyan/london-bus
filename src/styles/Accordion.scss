@@ -52,30 +52,24 @@
   }
 }
 
-@keyframes slideDown {
-  from {
-    opacity: 0;
-    transform: translateY(-5px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 
 
-@media (max-width: 428px) {
+@media (max-width: 480px) {
   .accordion {
-    width: 428px; 
+    width: 100%; 
+    height: auto;
     padding: 0 10px; 
 
     &__item {
-      margin-bottom: 10px;
+      margin-bottom: 14px;
+      width: 100%;
+      height: auto;
     }
 
     &__title {
-      padding: 12px 15px 12px 40px;
+      padding: 17px 20px 16px 48px;
       font-size: 16px;
+      height: auto;
 
       img {
         width: 12px;
@@ -85,8 +79,19 @@
 
     &__content {
       padding: 15px 20px;
-      font-size: 14px;
+      font-size: 16px;
       line-height: 22px;
     }
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

@@ -80,15 +80,15 @@
     }
 
 
-@media (max-width: 428px) {
+@media (max-width: 480px) {
     .popup{
-        width: 428px;
+        width: 50%;
         height: 100%;
         z-index: 12000;
         justify-content: center;
     }
   .popup__container {
-    width: 376px;
+    max-width: 380px;
     height: 632px;
     padding: 14px 16px;
     gap: 20px;
@@ -97,8 +97,8 @@
     align-items: flex-start;
     background: #fff;
     border-radius: 12px;
-    position: relative;
     margin: 30px 26px;
+    position: fixed;
 
     &-box {
       flex-direction: column;

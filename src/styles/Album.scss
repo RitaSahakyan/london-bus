@@ -62,3 +62,9 @@
     right: 50px;
   }
 }
+
+@media (max-width: 480px){
+  img{
+    max-width: 380px;
+  }
+}

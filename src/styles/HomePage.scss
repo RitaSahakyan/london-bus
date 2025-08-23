@@ -837,11 +837,10 @@
 }
 
 
-/*Адаптация под iPhone*/
-
-@media (max-width: 428px) {
+/*Адаптация под мобильные*/
+@media (max-width: 480px) {
     .homepage{
-        width: 428px;
+        width: 480px;
     }
 
   .homepage__home {
@@ -855,7 +854,6 @@
 
     &-block {
       flex-direction: column;
-      align-items: center;
     }
 
     &-title {
@@ -865,11 +863,13 @@
       height: auto;
       line-height: 36px;
       text-align: left;
+      
     }
     
     &-children  {
       height: 207px;
       width: 218px;
+      margin-left: 199px;
 
         &-children img {
         height: 207px;
@@ -878,15 +878,13 @@
     }
 
     &-btnbox {
-      gap: 20px;
-      width: 100%;
+      width: 267px;
+      height: 55px;
     }
 
     &-btn {
       width: 100%;
-      max-width: 300px;
-      height: 50px;
-      font-size: 16px;
+      font-size: 19px;
     }
   }
   
@@ -938,13 +936,15 @@
       &-item {
         width: 90%;
         max-width: 360px;
-        text-align: center;
+        text-align: left;
       }
 
       &-header {
         font-size: 15px;
-        margin: 15px 10px;
-        justify-content: center;
+        margin: 15px 0px;
+        justify-content: left;
+
+
 
         h3 {
           margin-left: 10px;
@@ -1018,13 +1018,13 @@
     }
 
         &-smallclouds {
-            width: 428px;
+            width: 480px;
             height: 120px;
             top: -380px;
         }
 
         &-bgdots{
-            width: 428px;
+            width: 480px;
             height: 534px;
             top: -270px;
         }
@@ -1085,6 +1085,9 @@
         border-radius: 8px;
       }
     }
+    &-gallery img:nth-child(n+7){
+        display: none;
+      }
 
     &-icon1{
         left: 44px;
@@ -1104,47 +1107,48 @@
     }
   }
   .homepage__review {
-    width: 400px; 
+    width: 100%; 
 
     h1 {
         font-size: 35px;
         margin-top: 79px;
-        margin-bottom: 15px;
+        margin-bottom: 20px;
         text-align: center;
     }
     &-box{
-        width: 400px;
+        width: 90%;
     }
 
     &-container {
         flex-direction: column;
         justify-content: center;
-        width: 400px;
+        width: 100%;
         gap: 15px;
         align-items: center;
+        hanging-punctuation: 238px;
 
     }
 
     &-clouds {
         position: absolute;
-        top: 280px;
+        top: 350px;
         left: 0;
         height: 201px;
-        width: 1920px;
+        width: 480px;
         background-position: center top;
         content: '';
         background-repeat: no-repeat;
         background: url(../assets/Parents-about-us/clouds.svg);
-    overflow: hidden;
-    z-index: -1;
+        overflow: hidden;
+        z-index: -1;
     }
 
     &-plane {
         position: absolute;
-        top: -190px;
-        left: -90px;
+        top: -60px;
+        left: -40px;
         height: 351px;
-       width: 241px;
+        width: 241px;
         background-position: center top;
         content: '';
         background-repeat: no-repeat;
@@ -1153,7 +1157,7 @@
     }
 
     &-parent {
-        margin: 15px 0 0 56px;
+        margin: 30px 0 0 56px;
 
         img {
             width: 84px;
@@ -1170,19 +1174,19 @@
 
     &-content {
         width: 100%;
-        height: auto;
-        padding-bottom: 15px;
+        height: 238px;
+        padding-bottom: 30px;
 
         img {
             height: 50px;
             width: 50px;
-            margin: 15px;
+            margin: 40px 0 27px 32px;
         }
     }
 
     &-text {
-        margin: 10px 15px;
-        font-size: 16px;
+        margin-left: 20px;
+        font-size: 18px;
         line-height: 22px;
     }
 }
@@ -1193,7 +1197,7 @@
 
     h1 {
         font-size: 35px;
-        margin-bottom: 32px;
+        margin-bottom: 46px;
         text-align: center;
     }
 
@@ -1213,9 +1217,11 @@
             height: auto;
         }
         p {
-            font-size: 18px;
-            text-align: center;
-            margin-top: 10px;
+            font-size: 22px;
+            text-align: left;
+            font-weight: 600;
+            margin-top: 36px;
+            margin-left: 9px;
         }
     }
     &-box:nth-child(n+2) {
@@ -1238,7 +1244,7 @@
     }
 }
 .homepage__contacts {
-    width: 428px;
+    width: 480px;
     margin-top: 50px; 
     flex-direction: column;
     align-items: center;
@@ -1275,7 +1281,7 @@
     }
 
     &-bgdots {
-      width: 428px;
+      width: 480px;
       height: 466px;
     }
 
@@ -1300,7 +1306,7 @@
     height: 100%;
     background-image: url('../assets/Home/sloud_xl.svg');background-repeat: no-repeat; background-position:0px 550px;
     background-size: contain;
-    top: -150px;
+    top: 20px;
     z-index: -1;
     object-fit: cover;
 }

@@ -48,6 +48,7 @@ const Request = ({ isOpen, onClose }) => {
             <div className="request__background" ></div>
 
             <form className="request__container" onSubmit={handleSubmit}
+            onClick={(e) => e.stopPropagation()}
             >
                 <p className="request__container-header">Ուղարկել հարցում</p>
 
